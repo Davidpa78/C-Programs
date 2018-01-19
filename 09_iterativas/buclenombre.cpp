@@ -4,7 +4,8 @@
 
 int main(){
 
-printf("Hola Mundo.\n");/*Llamada a la función*/
+    for (int c=0; c<5; c++)
+    printf("David\n");
 
 	return EXIT_SUCCESS;
 }
