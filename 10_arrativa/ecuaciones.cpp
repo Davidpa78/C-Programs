@@ -17,10 +17,10 @@ void ver(double a[N][C]){
 int main(){
 
     double a[N][C] = {
-        {2,4,5},
-        {6,3,8}
+        {40,3,18},
+        {4,2,20}
     }, temp, incognitas[N];
-    int index = N;
+    int indice = N;
 
     for(int n =0; n<N; n++) {
         temp = a[n][n];
@@ -37,13 +37,13 @@ int main(){
 
     for (int i=N-1; i>=0; i--) {
         temp = a[i][i+1];
-        if (index != N)
-          temp = a[i][i+2] - incognitas[index] * temp;
-        incognitas[--index] = temp;
+        if (indice != N)
+          temp = a[i][i+2] - incognitas[indice] * temp;
+        incognitas[--indice] = temp;
     }
 
     for (int i =0; i<N; i++)
         printf("La incognita %i vale: %.2f\n",i+1,incognitas[i]);
-    
-	return EXIT_SUCCESS;
+
+	 EXIT_SUCCESS;
 }
