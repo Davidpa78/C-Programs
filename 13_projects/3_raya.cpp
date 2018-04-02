@@ -9,9 +9,13 @@
 #define M 3
 #define N 3
 enum Jugador {J1, J2};
+
 Jugador jugador = J1;
+
 int tablero[M][N];
+
 int x=0, y=Y_GAME, p =0;
+
 int checkcords(int y, int x) {
     if(x < 0 || y < Y_GAME || x > (N-1)*2 || y > ((M-1)*2) + Y_GAME )
         return 0;
@@ -51,7 +55,7 @@ void cambiarJ() {
     header();
     ver(tablero);
     jugador = jugador ? J1 : J2;
-    mvprintw(4,0,"Jugador: %i",jugador);
+    mvprintw(4,0,"Jugador: %i",jugador+1);
     y = Y_GAME;
 }
 int main(){
@@ -64,7 +68,13 @@ int main(){
     keypad(stdscr, TRUE);
     header();
     ver(tablero);
-    mvprintw(4,0,"Jugador: %i",jugador);
+    start_color();
+    init_pair(1,COLOR_BLUE,COLOR_RED);
+    bkgd(COLOR_PAIR(1));
+
+
+
+    mvprintw(4,0,"Jugador: %i",jugador+1);
     move(Y_GAME,0);
     while (!finish) {
         int ch = getch();
@@ -85,6 +95,17 @@ int main(){
                 int *celda = &tablero[(y- Y_GAME)/2][x/2];
                 if(*celda == 0) {
                     *celda = (jugador + 1);
+
+                    if(tablero[0][0]!=0 && tablero[0][0]!=0 && tablero[0][0]!=0){
+                        if(tablero[0][0] == tablero[1][1] == tablero[2][2]){
+
+                            mvprintw(10,10,"HAS GANADO JUGADOR %i",jugador+1);
+                            refresh();
+
+
+                        }
+
+                    }
                     cambiarJ();
                 }
                 break;
