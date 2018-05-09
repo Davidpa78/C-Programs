@@ -59,13 +59,16 @@ int main(){
     Pila op, datos;
     double op1, op2;
     char opera;
+    int nop;
     Operacion catalogo[] = {
         {"suma",  &sum},
         {"resta", &res},
         {"multiplacion", &mul},
         {"division", &div}
     };
-
+    printf("Operaciones a realizar: ");
+    scanf(" %i", &nop);
+for (int i=0; i=nop; i++){
     printf("Operacion: ");
     scanf(" %lf %c %lf", &op1, &opera, &op2);
     push(op2, &datos);
@@ -74,6 +77,20 @@ int main(){
         case '+':
             push(suma, &op);
             break;
+        case '-':
+            push(resta, &op);
+            break;
+
+        case '*':
+            push(multi, &op);
+            break;
+
+        case '/':
+            push(division, &op);
+            break;
+
+    }
+        
     }
     return EXIT_SUCCESS;
 }
