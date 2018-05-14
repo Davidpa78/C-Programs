@@ -68,7 +68,7 @@ int main(){
     };
     printf("Operaciones a realizar: ");
     scanf(" %i", &nop);
-for (int i=0; i=nop; i++){
+for (int i=0; i<nop; i++){
     printf("Operacion: ");
     scanf(" %lf %c %lf", &op1, &opera, &op2);
     push(op2, &datos);

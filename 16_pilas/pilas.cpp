@@ -9,7 +9,7 @@ typedef struct{
     int cima;
 }Pilila;
 
-void push (int nuevodato,Pilila*lapila){
+void push (int nuevodato,Pilila *lapila){
     lapila->data[lapila->cima] = nuevodato;
     printf("--> %6i\n",lapila->data[lapila->cima]);
     lapila->cima++;
