@@ -11,7 +11,13 @@ bool tiene_un_divisor(int dividendo,int divisor){
 }
 
 int main(){
-    if (tiene_un_divisor(13,12))
-        printf("El 8 tiene un divisor");
+    int numero;
+    printf("Introduce número: ");
+    scanf("%i", &numero);
+    if (tiene_un_divisor(numero,numero-1))
+        printf("El %i tiene al menos un divisor\n",numero);
+    else{
+        printf("El %i no tiene divisor\n",numero);
+    }
     return EXIT_SUCCESS;
 }
